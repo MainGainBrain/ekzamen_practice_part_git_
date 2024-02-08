@@ -1,0 +1,15 @@
+1 ЗАДАНИЕ 
+	SELECT id_stud, Results FROM Exams
+	ORDER BY Results DESC;
+
+2 ЗАДАНИЕ
+	SELECT AVG(Results) AS "Результат группы 123" FROM Exams
+	WHERE id_stud = 1 OR id_stud = 2 OR id_stud = 3;
+	
+3 ЗАДАНИЕ
+	INSERT INTO Students (last_name, name, "group")
+	VALUES ("Кубарский", "Антон", 123);
+
+	SELECT s.name, s.last_name, e.Results  FROM Students s
+	LEFT OUTER JOIN Exams e ON e.id_stud = s.id_stud;
+
