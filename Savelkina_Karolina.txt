@@ -1,0 +1,19 @@
+Задание 1: 
+-- Вывести имена и фамилии студентов, для поля name задать имя (псевдоним) Имя, для поля last_name - Фамилия
+SELECT name AS Имя, last_name AS фамилия
+FROM Students  
+Задание 2: 
+
+SELECT "group" as Группа, COUNT("group") as количество_студентов
+FROM Students 
+WHERE students."group" = 789
+
+
+Задание 3: 
+--В таблицу Students добавить новую запись: Фамилия - Кубарский, Имя - Антон, Группа - 123. Вывести имена, фамилии и результаты (Results) всех студентов
+INSERT INTO Students (last_name, name, "group") values 
+('Кубарский','Антон', 123)
+
+SELECT a.last_name, a.name, b.Results 
+FROM Students as a join Exams as b on a.id_stud = b.id_stud 
+
