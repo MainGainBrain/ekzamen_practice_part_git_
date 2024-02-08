@@ -1,0 +1,1 @@
+INSERT INTO Students (name,last_name,"group") Values("Кубарский","Антон",123)
