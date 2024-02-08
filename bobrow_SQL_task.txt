@@ -1,0 +1,20 @@
+Бобров Алексей задания SQL
+1. Вывести имена и фамилии студентов, которые учатся в группе 456
+SELECT last_name, name FROM Students
+WHERE "group" = 456;
+
+2. Посчитать количество студентов отдельно в группе 123 и 789, вывести
+новый столбец с названием “Количество_студентов” и столбец group с
+названием “Группа”.
+SELECT COUNT("group") AS 'Количество_студентов', "group" AS 'Группа' FROM Students
+WHERE "group" IN (123,789)
+GROUP BY "group";
+
+3. В таблицу Students добавить новую запись: Фамилия - Кубарский, Имя -
+Антон, Группа - 123. Вывести имена, фамилии и результаты (Results) всех
+студентов.
+INSERT INTO Students (last_name,name,"group") VALUES('Кубарский','Антон',123);
+
+SELECT s.name, s.last_name, e.Results 
+FROM Exams e RIGHT JOIN Students s 
+ON e.id_stud = s.id_stud 
